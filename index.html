@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M08.5</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📋 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegurarse de que todos los materiales estén listos.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table id="activity-0-content">
+            <tr>
+                <td><strong>PASO 1:</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida_introduccion')">
+        <div class="title">🎉 Actividad 1: Bienvenida e Introducción ⏰ Tiempo: <span id="activity-1-total-time">1 minuto</span></div>
+        <div class="subtitle">Dar la bienvenida y presentar el enfoque del día.</div>
+    </div>
+    <div id="bienvenida_introduccion" class="content">
+        <table id="activity-1-content">
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la DIAPOSITIVA 1 y saluda a los niños mientras muestras el logo de Gnius Club, luego introduce el tema del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Hola, CODE SQUAD! Bienvenidos a nuestra misión submarina. Hoy vamos a explorar las profundidades del océano en busca del arrecife arcoíris. ¡Vamos a entrenar el cerebro!</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la DIAPOSITIVA 2, saluda a los niños con entusiasmo y menciona que antes de la misión, haremos un ejercicio para entrenar nuestro cerebro.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> Ahora vamos a preparar nuestros cerebros en el Gimnasio del CODE SQUAD con una canción. ¡Presten atención a las indicaciones de la canción, esto es parte de la misión!</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile_logica')">
+        <div class="title">🕺 Actividad 2: Baile de Lógica ⏰ Tiempo: <span id="activity-2-total-time">2 minutos</span></div>
+        <div class="subtitle">Preparar a los niños para la misión con un ejercicio de lógica a través de un baile.</div>
+    </div>
+    <div id="baile_logica" class="content">
+        <table id="activity-2-content">
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 3 e introduce la canción, explicando que deberán seguir los movimientos indicados en la música.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Vamos a movernos! Ahora sigamos el ritmo y los movimientos de la canción para que nuestros cerebros estén listos para el viaje submarino. ¡Vamos a divertirnos juntos!</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento_problema')">
+        <div class="title">📖 Actividad 3: Planteamiento del Problema ⏰ Tiempo: <span id="activity-3-total-time">2 minutos</span></div>
+        <div class="subtitle">Introducir a los niños en el contexto de la misión utilizando la historia y explicar el reto.</div>
+    </div>
+    <div id="planteamiento_problema" class="content">
+        <table id="activity-3-content">
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 5, adopta la actitud de un cuenta cuentos y narra la historia del diálogo.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Genios del CODE SQUAD! Hoy vamos a acompañar a nuestra amiga Marina en su increíble viaje submarino. Ella quiere llegar al Arrecife Arcoíris, pero el camino es largo y oscuro. Necesitará la ayuda de los faros submarinos para guiarse. Pero algo ha salido mal: los faros están apagados y el camino es confuso. ¡Es nuestro deber ayudarla a encender los faros y guiarla hasta su destino!</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6, sigue con la actitud del cuenta cuentos y explica el reto al que nos enfrentamos hoy como CODE SQUAD.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> Marina no puede avanzar si no encendemos los faros. Cada faro está compuesto por diferentes elementos: color, forma, y brillo. Y cada faro le indica a Marina cómo debe avanzar el submarino. ¡Debemos organizarlos correctamente usando nuestro código de navegación para que Marina pueda continuar su viaje! CODE SQUAD, ¡necesitamos su ayuda para resolver este reto submarino y encender todos los faros!</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion_parejas')">
+        <div class="title">👥 Actividad 4: Formación de Parejas ⏰ Tiempo: <span id="activity-4-total-time">2 minutos</span></div>
+        <div class="subtitle">Explicar la importancia del trabajo en equipo en parejas y asegurar la organización.</div>
+    </div>
+    <div id="formacion_parejas" class="content">
+        <table id="activity-4-content">
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 7 "Formación de Equipos", explica la importancia de trabajar en equipo y junta a los niños en pares para trabajar en la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¡CODE SQUAD! Hoy necesitamos unir nuestras mentes para ayudar a Marina en su viaje submarino. Trabajar en equipo es como construir algo juntos, ¡dos cabezas piensan mejor que una! Vamos a encontrar un compañero para que juntos podamos resolver el reto de encender los faros submarinos. ¡Busquen su pareja y prepárense para la misión!</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> El maestro verifica que todos los niños estén emparejados y organizados para trabajar.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¿Todos tienen a su compañero? ¡Perfecto! Recuerden, cuando trabajamos juntos, somos más fuertes y más rápidos. Así que asegúrense de estar listos para ayudar a Marina en su misión. ¡Vamos a divertirnos y aprender juntos!</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('explicacion_reto')">
+        <div class="title">⚙️ Actividad 5: Explicación del Reto de Codificación ⏰ Tiempo: Variable <span id="activity-5-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir el reto de codificación que deberán resolver.</div>
+    </div>
+    <div id="explicacion_reto" class="content">
+        <table id="activity-5-content">
+            <!-- Contenido insertado dinámicamente -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('construccion_bloques')">
+        <div class="title">🔧 Actividad 6: Construcción con Bloques ⏰ Tiempo: Variable <span id="activity-6-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Construir los faros utilizando los bloques y los códigos generados.</div>
+    </div>
+    <div id="construccion_bloques" class="content">
+        <table id="activity-6-content">
+            <!-- Contenido insertado dinámicamente -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('mensaje_cuartel')">
+        <div class="title">⚠️ Actividad 7: Mensaje del Cuartel ⏰ Tiempo: Variable <span id="activity-7-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir un obstáculo en la narrativa para mantener el interés y la motivación.</div>
+    </div>
+    <div id="mensaje_cuartel" class="content">
+        <table id="activity-7-content">
+            <!-- Contenido insertado dinámicamente -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_historia')">
+        <div class="title">📘 Actividad 8: Conclusión de la Historia ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Cierre de la clase y conclusión del viaje submarino.</div>
+    </div>
+    <div id="conclusion_historia" class="content">
+        <table id="activity-8-content">
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la DIAPOSITIVA 32 "Conclusión del Viaje Submarino" y cuenta el final del cuento a los Genios.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Lo logramos, CODE SQUAD! Gracias a su increíble trabajo y a seguir el código, Marina ha podido encontrar el camino correcto con los faros y ha llegado a salvo a la ciudad submarina. Todos los habitantes están felices y agradecidos. ¡Qué emocionante ver cómo su valentía y habilidades de codificación salvaron el día! Ahora quiero hacerles algunas preguntas para recordar lo que aprendimos hoy."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (5 minutos):</strong> Realiza una breve reflexión para que los Genios recuerden lo que aprendieron hoy.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "1. ¿Por qué era importante seguir el código de los faros correctamente para ayudar a Marina? 2. ¿Qué partes del código tenían que representar con bloques de color? 3. ¿Cómo les ayudó trabajar en equipo para completar la misión?"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+       var steps = {
+    "K1": {
+        "5.1": [
+            { 
+                "step": 1, "time": { "30": 1, "40": 1, "50": 1 }, 
+                "accion": "Reproduce la DIAPOSITIVA 9 y explica a los Genios en qué consiste el reto.", 
+                "dialogo": "¡CODE SQUAD! Para que Marina pueda encontrar el camino en el fondo del mar, vamos a ayudarla a crear un código para los faros submarinos. Vamos a representar cada faro con dos bloques de color. Ustedes pueden elegir los colores que quieran para representar cada faro." 
+            },
+            { 
+                "step": 2, "time": { "30": 2, "40": 2, "50": 2 }, 
+                "accion": "Reproduce la DIAPOSITIVA 10, distribuye el papel y los materiales, y asegúrate de que cada niño tenga material para trabajar en parejas.", 
+                "dialogo": "Aquí tienen su papel y colores. Ahora, en sus hojas, van a dibujar los faros y asignarles bloques de color. ¡Prepárense para codificar!" 
+            },
+            { 
+                "step": 3, "time": { "30": 5, "40": 10, "50": 10 }, 
+                "accion": "Reproduce la DIAPOSITIVA 11, supervisa el proceso de creación del código en pares. Resuelve dudas, explica o corrige lo que sea necesario.", 
+                "dialogo": "Trabajen juntos para dibujar su código. Recuerden, cada faro debe tener dos bloques. ¡Vamos a ver cuán bien pueden codificar!" 
+            }
+        ],
+        "6": [
+            { 
+                "step": 1, "time": { "30": 2, "40": 2, "50": 2 }, 
+                "accion": "Reproduce la DIAPOSITIVA 18 y dirige a los Genios para que intercambien los códigos que hicieron.", 
+                "dialogo": "¡CODE SQUAD! Ahora que tenemos nuestros códigos listos, vamos a intercambiarlos con nuestros compañeros para ver cómo podemos ayudar a Marina a encontrar el camino correcto. Voy a recoger sus códigos y dárselos a otro equipo. ¡Vamos a comenzar!" 
+            },
+            { 
+                "step": 2, "time": { "30": 7, "40": 10, "50": 10 }, 
+                "accion": "Reproduce la DIAPOSITIVA 19 'Construcción del Camino K1' y entrega los códigos a los equipos.", 
+                "dialogo": "¡CODE SQUAD! Marina está lista para su aventura submarina, pero necesita su ayuda para colocar los faros en el camino correcto. Usen el código de su compañero para construir el camino con los bloques de colores. ¡Sigamos el patrón que está en el código y ayudemos a Marina!" 
+            }
+        ],
+        "7": [
+            { 
+                "step": 1, "time": { "30": 3, "40": 4, "50": 5 }, 
+                "accion": "Reproduce la DIAPOSITIVA 26 y explica a los Genios el obstáculo que enfrenta Marina.", 
+                "dialogo": "¡CODE SQUAD! ¡Tenemos una emergencia! Mientras ayudábamos a Marina a seguir los faros, ¡hemos llegado a una parte muy profunda del océano y la luz está desapareciendo! Ahora, los faros han cambiado de color, ¡y necesitamos un nuevo código para que Marina pueda encontrar su camino! El cuartel general nos ha enviado un código especial para esta situación. ¡Vamos a resolver esto juntos!" 
+            },
+            { 
+                "step": 2, "time": { "30": 7, "40": 10, "50": 10 }, 
+                "accion": "Reproduce la DIAPOSITIVA 27 'Código de Rescate de Faros K1' y motiva a los Genios a seguir el nuevo código.", 
+                "dialogo": "Ahora verán el 'Código de Rescate de los Faros'. ¡Recuerden, cada faro tiene dos bloques! Usen los colores nuevos y sigan el código para colocar los faros en el camino correcto. ¡Vamos CODE SQUAD, tenemos que ayudar a Marina a no perderse en la oscuridad del océano!" 
+            }
+        ]
+    },
+    "K2": {
+        "5.2": [
+            { 
+                "step": 1, "time": { "30": 1, "40": 1, "50": 1 }, 
+                "accion": "Reproduce la DIAPOSITIVA 12 y explica a los Genios en qué consiste el reto.", 
+                "dialogo": "¡CODE SQUAD! Marina necesita que programemos los faros submarinos para guiarla en su viaje. Vamos a crear un código con tres bloques de colores para representar cada faro. Pueden elegir los colores que quieran." 
+            },
+            { 
+                "step": 2, "time": { "30": 2, "40": 2, "50": 2 }, 
+                "accion": "Reproduce la DIAPOSITIVA 13, distribuye el papel y los materiales.", 
+                "dialogo": "Aquí tienen su papel y colores. Ahora, en sus hojas, van a dibujar los faros y asignarles tres bloques de color. ¡Prepárense para codificar!" 
+            },
+            { 
+                "step": 3, "time": { "30": 5, "40": 10, "50": 10 }, 
+                "accion": "Reproduce la DIAPOSITIVA 14, supervisa el proceso de creación del código en pares. Resuelve dudas, explica o corrige lo que sea necesario.", 
+                "dialogo": "Trabajen juntos para dibujar su código. Recuerden, cada faro debe tener tres bloques. ¡Vamos a ver cuán bien pueden codificar!" 
+            }
+        ],
+        "6": [
+            { 
+                "step": 1, "time": { "30": 2, "40": 2, "50": 2 }, 
+                "accion": "Reproduce la DIAPOSITIVA 20 y dirige a los Genios para que intercambien los códigos que hicieron.", 
+                "dialogo": "¡CODE SQUAD! Ahora vamos a intercambiar nuestros códigos para ver cómo nuestros compañeros pueden ayudar a Marina. Yo voy a recoger sus códigos y dárselos a otro equipo para que sigan el patrón y construyan el camino correcto para los faros. ¡Vamos a comenzar!" 
+            },
+            { 
+                "step": 2, "time": { "30": 7, "40": 10, "50": 10 }, 
+                "accion": "Reproduce la DIAPOSITIVA 21 'Construcción del Camino K2' y entrega los códigos a los equipos.", 
+                "dialogo": "¡CODE SQUAD! Es hora de ayudar a Marina a seguir el camino correcto con los faros. Usen el código que recibieron para colocar los faros con sus bloques de colores en el orden correcto. Recuerden, cada faro tiene tres bloques de colores. ¡Vamos a construir el camino!" 
+            }
+        ],
+        "7": [
+            { 
+                "step": 1, "time": { "30": 3, "40": 4, "50": 5 }, 
+                "accion": "Reproduce la DIAPOSITIVA 28 y explica a los Genios el obstáculo.", 
+                "dialogo": "¡CODE SQUAD! Mientras ayudábamos a Marina, nos encontramos en una parte del océano donde la luz desaparece casi por completo. Los faros que seguíamos han cambiado de color, ¡pero el cuartel general nos ha enviado un nuevo código para que podamos seguir ayudando a Marina a navegar!" 
+            },
+            { 
+                "step": 2, "time": { "30": 7, "40": 10, "50": 10 }, 
+                "accion": "Reproduce la DIAPOSITIVA 29 'Código de Rescate de Faros K2' y motiva a los Genios a seguir el nuevo código.", 
+                "dialogo": "Aquí está el 'Código de Rescate de los Faros' actualizado. Usen los colores nuevos y sigan el patrón. Cada faro tiene tres bloques, ¡y tenemos que colocarlos correctamente para que Marina no se pierda! ¡Vamos CODE SQUAD, podemos hacerlo!" 
+            }
+        ]
+    },
+    "K3": {
+        "5.3": [
+            { 
+                "step": 1, "time": { "30": 1, "40": 1, "50": 1 }, 
+                "accion": "Reproduce la DIAPOSITIVA 15 y explica a los Genios en qué consiste el reto.", 
+                "dialogo": "¡CODE SQUAD! Marina está lista para su viaje, pero necesita que programemos cinco faros. Cada faro tendrá cuatro bloques de colores. Vamos a programar cada faro con bloques que ustedes elijan." 
+            },
+            { 
+                "step": 2, "time": { "30": 2, "40": 2, "50": 2 }, 
+                "accion": "Reproduce la DIAPOSITIVA 16, distribuye el papel y los materiales.", 
+                "dialogo": "Aquí tienen su papel y colores. Ahora, en sus hojas, van a dibujar los faros y asignarles cuatro bloques de color. ¡Prepárense para codificar!" 
+            },
+            { 
+                "step": 3, "time": { "30": 5, "40": 10, "50": 10 }, 
+                "accion": "Reproduce la DIAPOSITIVA 17, supervisa el proceso de creación del código en pares. Resuelve dudas, explica o corrige lo que sea necesario.", 
+                "dialogo": "Trabajen juntos para dibujar su código. Recuerden, cada faro debe tener cuatro bloques. ¡Vamos a ver cuán bien pueden codificar!" 
+            }
+        ],
+        "6": [
+            { 
+                "step": 1, "time": { "30": 2, "40": 2, "50": 2 }, 
+                "accion": "Reproduce la DIAPOSITIVA 22 y dirige a los Genios para que intercambien los códigos que hicieron.", 
+                "dialogo": "¡CODE SQUAD! Ahora vamos a intercambiar nuestros códigos con otros equipos para ayudarnos mutuamente a colocar los faros en el camino correcto. Voy a recoger sus códigos y entregárselos a otro equipo. ¡Vamos a comenzar el intercambio!" 
+            },
+            { 
+                "step": 2, "time": { "30": 7, "40": 10, "50": 10 }, 
+                "accion": "Reproduce la DIAPOSITIVA 23 'Construcción del Camino K3' y entrega los códigos a los equipos.", 
+                "dialogo": "¡CODE SQUAD! Es el momento de ayudar a Marina a navegar por el fondo del mar. Usen el código que les entregaron para colocar los faros en el orden correcto con sus cuatro bloques de colores. ¡Vamos a construir el camino que necesita!" 
+            }
+        ],
+        "7": [
+            { 
+                "step": 1, "time": { "30": 3, "40": 4, "50": 5 }, 
+                "accion": "Reproduce la DIAPOSITIVA 30 y explica a los Genios el obstáculo.", 
+                "dialogo": "¡CODE SQUAD! Hemos llegado a la parte más profunda del océano, donde casi no hay luz. Los faros han cambiado de color, ¡y Marina necesita nuestra ayuda! El cuartel general ha enviado un código especial para resolver este problema. ¡Vamos a trabajar juntos para salvar la misión!" 
+            },
+            { 
+                "step": 2, "time": { "30": 7, "40": 10, "50": 10 }, 
+                "accion": "Reproduce la DIAPOSITIVA 31 'Código de Rescate de Faros K3' y motiva a los Genios a seguir el nuevo código.", 
+                "dialogo": "¡Ahora es el momento! Aquí tienen el 'Código de Rescate de los Faros'. Cada faro tiene cuatro bloques de colores diferentes. Sigamos el código paso a paso para asegurarnos de que Marina pueda navegar a salvo. ¡Vamos CODE SQUAD, juntos lo lograremos!" 
+            }
+        ]
+    }
+};
+
+
+
+
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+            "activity-5": true,
+            "activity-6": true,
+            "activity-7": steps[level]["7"].some(s => s.time[time] > 0),
+            "activity-8": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+        document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + step.time[time], 0);
+    }
+
+    updateContent();
+</script>
+
+
+
+
+</body>
+</html>
+
